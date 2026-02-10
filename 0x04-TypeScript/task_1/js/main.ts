@@ -61,3 +61,5 @@ const student1 = new StudentClass('Alice', 'Johnson');
 console.log(student1.displayName());
 console.log(student1.workOnHomework());
 
+
+
