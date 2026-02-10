@@ -32,7 +32,10 @@ class Teacher implements TeacherInterface {
   }
 }
 function createEmployee(salary: number | string): Director | Teacher {
-  if (typeof salary === 'number' && salary < 500) {
+  if (typeof salary === 'string') {
+    salary = parseInt(salary.replace('$', ''), 10);
+  }
+  if (salary < 500) {
     return new Teacher();
   } else {
     return new Director();
@@ -40,3 +43,4 @@ function createEmployee(salary: number | string): Director | Teacher {
 }
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
+console.log(createEmployee("$500"));
